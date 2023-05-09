@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Temperature Converter</title>
+    <style>
+      body {
+        background-color: #3399ff;
+      }
+      .sun-cloud {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #9ad4db;
+			height: 100px;
+			padding: 20px;
+		}
+		.sun {
+			font-size: 3em;
+			color: #f1c40f;
+		}
+		.cloud {
+			font-size: 3em;
+			color: #fff;
+      }
+
+      #content {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      input[type=number] {
+        padding: 10px;
+        font-size: 18px;
+        border: none;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        width: 300px;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      #result {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <div id="content">
+      <h1>Temperature Converter</h1>
+      <input type="number" id="input" placeholder="Enter temperature">
+      <br>
+      <button onclick="toCelsius()">Convert to Celsius</button>
+      <button onclick="toFahrenheit()">Convert to Fahrenheit</button>
+      <br>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function toCelsius() {
+        var input = document.getElementById("input").value;
+        var celsius = (input - 32) * 5 / 9;
+        document.getElementById("result").innerHTML = input + "°F = " + celsius.toFixed(2) + "°C";
+      }
+
+      function toFahrenheit() {
+        var input = document.getElementById("input").value;
+        var fahrenheit = (input * 9 / 5) + 32;
+        document.getElementById("result").innerHTML = input + "°C = " + fahrenheit.toFixed(2) + "°F";
+      }
+    </script>
+  </body>
+</html>
